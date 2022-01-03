@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'main';
+    src: url("fonts/300-Estedad-FD-Light.ttf");
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url("fonts/500-Estedad-FD-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'logofont';
+    src: url("fonts/Cabin-VariableFont_wdth,wght.ttf");
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+    .searchArea {
+        width: 80% !important;
+        right: 10% !important;
+    }
+    .sliderItem{
+        height: 800px !important;
+        width: 90% !important;
+    }
+    .sliderItem_image{
+        height: 150px !important;
+    }
+    .default_contianer{
+        width: 90% !important;
+    }
+}
+
+body {
+    font-family: main;
+    overflow-x: hidden !important;
+}
+
+.com_appbar {
+    /*height: 220px !important;*/
+    /*padding: 50px;*/
+    display: none;
+    background: white !important;
+    border-bottom: 1px solid #efefef !important;
+}
+
+.mob_appbar {
+    border-bottom: 1px solid #efefef !important;
+}
+
+.logoText {
+    font-size: 40px;
+    text-align: left;
+    font-family: logofont !important;
+    font-weight: normal;
+}
+
+.searchNavbar {
+    text-align: center !important;
+    /*border: 1px solid;*/
+    font-weight: bolder;
+    font-family: bold;
+}
+
+.searchNavbarBtn {
+    background: black;
+    color: white;
+    height: 50px;
+    width: 60px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+input {
+    font-family: main !important;
+}
+
+.listMenuCom li {
+    float: right;
+    padding-left: 40px;
+    margin-top: 20px;
+    text-align: center !important;
+}
+
+.listMenuCom {
+    list-style: none;
+    text-align: left;
+    font-family: main;
+    /*background: red !important;*/
+}
+
+.mainArea {
+    /*margin-top: 80px !important;*/
+}
+
+.searchArea {
+    margin: auto !important;
+    position: absolute;
+    /*background: red;*/
+    width: 35%;
+    top: 40%;
+    right: 35%;
+}
+
+.v-list-item {
+    font-family: main !important;
+}
+.sliderItem{
+    width: 70%;
+    height: 350px;
+    background: #f8f9fa;
+}
+/*images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp*/
+.sliderItem_image{
+    width: 100%;
+    height:338px;
+    background: red;
+    background: url("overview.png");
+    background-size: cover;
+    background-position: center;
+}
+.sliderItem_text{
+    padding: 10px;
+    text-align: right;
+    font-family: main !important;
+}
+.sliderItem_text h4{
+    margin-top: -15px !important;
+}
+.sliderItem_label{
+    color: #808080;
+    font-size: 13px;
+}
+.sliderItem_caption{
+    color: #808080;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 30px;
+    margin-top: 15px;
+    height: 150px;
+    /*background: red;*/
+    overflow: hidden;
+}
+.writer_area{
+    font-size: 10px;
+}
+.default_contianer{
+    width: 70%;
+}
+.editorpick{
+    text-align: right !important;
+    font-family: main;
+}
+.title_editorpick{
+    border-bottom: 2px solid #efefef;
+    padding-bottom: 10px;
+}
+.sliderComponent{
+}
+.title_trend{
+    border-bottom: 2px solid #efefef;
+    padding-bottom: 10px;
+    text-align: right;
+    font-family: main;
+}
+.trends{
+    font-family: main;
+}

@@ -1,18 +1,140 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-app>
+        <navbar/>
+        <v-main class="mainArea">
+            <slider/>
+            <br>
+            <center>
+                <div class="default_contianer">
+                    <v-row>
+                        <v-col cols="12" lg="8">
+                            <div class="editorpick">
+                                <h4 class="title_editorpick">پیشنهاد سردبیر</h4>
+                                <v-row class="mt-4">
+                                    <v-col cols="12" lg="6">
+                                        <vertical-post
+                                           image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
+                                           title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                           caption="محبوبیت زبان برنامه نویسی جاوا اسکریپت به علت عملکرد غنی آن روز به روز در حال افزایش است. فریم ورک های جاوا اسکریپت را امروزه می توان در طراحی فرانت اند و بک اند پروژه های تحت وب مورد استفاده قرار داد که این مسئله به شما کمک می کند تا بتوانید رابط های کاربری ساده و کاربر پسندی را طراحی کنید."
+                                           writer="علی امیری"
+                                           category="برنامه نویسی"
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" lg="6">
+                                        <horizontal-post
+                                           image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
+                                           title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                           category="طراحی وب "
+                                           writer="علی امیری"
+                                        />
+                                        <horizontal-post
+                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
+                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                                category="طراحی وب "
+                                                writer="علی امیری"
+                                        />
+                                        <horizontal-post
+                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
+                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                                category="طراحی وب "
+                                                writer="علی امیری"
+                                        />
+
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </v-col>
+                        <v-col cols="12" lg="4">
+                            <div class="trends">
+                                <h4 class="title_trend">محبوب ترین ها </h4>
+                                <trends/>
+                            </div>
+                        </v-col>
+                    </v-row>
+                    <br>
+                    <v-row>
+                        <v-col cols="12" lg="6">
+                            <div class="categoryPostTitle">
+                                <h4 class="title_trend">شبکه </h4>
+                            </div>
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                                    class="mt-5"
+                            />
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                            />
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                            />
+
+                        </v-col>
+                        <v-col cols="12" lg="6">
+                            <div class="categoryPostTitle">
+                                <h4 class="title_trend">گرافیک </h4>
+                            </div>
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                                    class="mt-5"
+                            />
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                            />
+                            <horizontal-post
+                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
+                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
+                                    category="طراحی وب "
+                                    writer="علی امیری"
+                            />
+
+                        </v-col>
+                    </v-row>
+                </div>
+            </center>
+        </v-main>
+        <br>
+        <fotter/>
+    </v-app>
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    import Navbar from "../components/main/navbar";
+    import Slider from "../components/index/slider";
+    import VerticalPost from "../components/main/verticalPost";
+    import HorizontalPost from "../components/main/horizontalPost";
+    import Trends from "../components/main/tends";
+    import Fotter from "../components/main/fotter";
+    export default {
+        name: 'Home',
+        components: {Fotter, Trends, HorizontalPost, VerticalPost, Slider, Navbar},
+        data: function () {
+            return {
+                model: 0,
+                colors: [
+                    'primary',
+                    'secondary',
+                    'yellow darken-2',
+                    'red',
+                    'orange',
+                ],
+            }
+        }
+    }
 </script>
