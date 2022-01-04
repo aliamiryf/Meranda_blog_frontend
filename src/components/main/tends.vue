@@ -65,6 +65,7 @@
     }
     .writer_area{
         /*margin-top: -15px;*/
+        font-family: main;
         text-align: right;
     }
 </style>
