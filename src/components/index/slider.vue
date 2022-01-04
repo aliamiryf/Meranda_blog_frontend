@@ -55,7 +55,7 @@
             }else{
                 this.height = 500
             }
-            console.log(this.data)
+            // console.log(this.data)
         }
     }
 </script>

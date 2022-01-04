@@ -4,6 +4,7 @@
         <v-main class="mainArea">
             <loader :loadering="isload"/>
             <slider v-if="sliderData != []" :data="sliderData"/>
+            {{data}}
             <br>
             <center>
                 <div class="default_contianer">
@@ -14,32 +15,23 @@
                                 <v-row class="mt-4">
                                     <v-col cols="12" lg="6">
                                         <vertical-post
-                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
-                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                                caption="محبوبیت زبان برنامه نویسی جاوا اسکریپت به علت عملکرد غنی آن روز به روز در حال افزایش است. فریم ورک های جاوا اسکریپت را امروزه می توان در طراحی فرانت اند و بک اند پروژه های تحت وب مورد استفاده قرار داد که این مسئله به شما کمک می کند تا بتوانید رابط های کاربری ساده و کاربر پسندی را طراحی کنید."
-                                                writer="علی امیری"
-                                                category="برنامه نویسی"
+                                                :image="suggest[0].suggestion_post.index_pricture"
+                                                :title="suggest[0].suggestion_post.title"
+                                                :caption="suggest[0].suggestion_post.description"
+                                                :writer="suggest[0].suggestion_post.writer.name"
+                                                :category="suggest[0].suggestion_post.category.title"
                                         />
                                     </v-col>
                                     <v-col cols="12" lg="6">
-                                        <horizontal-post
-                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
-                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                                category="طراحی وب "
-                                                writer="علی امیری"
-                                        />
-                                        <horizontal-post
-                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
-                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                                category="طراحی وب "
-                                                writer="علی امیری"
-                                        />
-                                        <horizontal-post
-                                                image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
-                                                title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                                category="طراحی وب "
-                                                writer="علی امیری"
-                                        />
+                                        <div v-for="(item , i) in suggest" :key="i">
+                                            <horizontal-post
+                                                    v-if="item.suggestion_post.id != suggest[0].suggestion_post.id "
+                                                    :image="item.suggestion_post.index_pricture"
+                                                    :title="item.suggestion_post.title"
+                                                    :category="item.suggestion_post.category.title"
+                                                    :writer="item.suggestion_post.writer.name"
+                                            />
+                                        </div>
 
                                     </v-col>
                                 </v-row>
@@ -58,51 +50,28 @@
                             <div class="categoryPostTitle">
                                 <h4 class="title_trend">شبکه </h4>
                             </div>
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                                    class="mt-5"
-                            />
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                            />
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                            />
+                            <div v-for="(item , i) in network[0].posts" :key="i" class="mt-1">
+                                <horizontal-post
+                                        :image="item.index_pricture"
+                                        :title="item.title"
+                                        :category="item.category.title"
+                                        :writer="item.writer.name"
+                                />
+                            </div>
 
                         </v-col>
                         <v-col cols="12" lg="6">
                             <div class="categoryPostTitle">
-                                <h4 class="title_trend">گرافیک </h4>
+                                <h4 class="title_trend">طراحی وب  </h4>
                             </div>
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_v_2.jpg.pagespeed.ic.LvRqrfFXI1.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                                    class="mt-5"
-                            />
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/xbig_img_1.jpg.pagespeed.ic.K2N7KNYATl.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                            />
-                            <horizontal-post
-                                    image="https://preview.colorlib.com/theme/meranda/images/ximg_h_1.jpg.pagespeed.ic.IUFbLUay1G.webp"
-                                    title="آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت"
-                                    category="طراحی وب "
-                                    writer="علی امیری"
-                            />
-
+                            <div v-for="(item , i) in web_developer[0].posts" :key="i" class="mt-1">
+                                <horizontal-post
+                                        :image="item.index_pricture"
+                                        :title="item.title"
+                                        :category="item.category.title"
+                                        :writer="item.writer.name"
+                                />
+                            </div>
                         </v-col>
                     </v-row>
                 </div>
@@ -124,27 +93,35 @@
     import Fotter from "../components/main/fotter";
     import axios from 'axios';
     import Loader from "../components/main/loader";
+    // import {ajaxGet} from "../utils/utilities";
     export default {
         name: 'Home',
         components: {Loader, Fotter, Trends, HorizontalPost, VerticalPost, Slider, Navbar},
         data: function () {
             return {
                 model: 0,
-                isload:false,
+                isload: false,
                 date: [],
-                sliderData : []
+                sliderData: [],
+                suggest: [],
+                network: [],
+                web_developer: [],
             }
         },
         mounted() {
             this.apiHandler()
         },
-        methods:{
-            async apiHandler(){
+        methods: {
+            async apiHandler() {
                 this.isload = true
                 const response = await axios.get('http://simba-market.ir/theme/meranda/api/main/index')
-                if (response.status == 200){
+                if (response.status == 200) {
                     this.isload = false
                     this.sliderData = response.data.lastpost
+                    this.suggest = response.data.suggest
+                    this.network = response.data.network
+                    this.web_developer = response.data.web_developer
+                    // console.log(this.network[0].posts)
                 }
             }
         }

@@ -2,7 +2,7 @@
     <div class="mb-7 horizontalPost">
         <v-row class="horizontalPost">
             <v-col cols="4">
-                <div class="image_area"  v-bind:style="{ backgroundImage: 'url(' + image + ')' }">></div>
+                <div class="image_area"  v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div>
             </v-col>
             <v-col cols="8">
                <div class="title_area">

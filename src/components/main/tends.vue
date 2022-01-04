@@ -1,69 +1,18 @@
 <template>
     <div>
-        <div class="trends_item">
+        <div class="trends_item" v-for="(item , i) in data" :key="i">
             <v-row>
                 <v-col cols="2">
-                    <div class="counter">01</div>
+                    <div class="counter" v-text="'0'+(parseInt(i)+1)"></div>
                 </v-col>
                 <v-col cols="10">
                     <div class="caption">
-                        <p> آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت</p>
+                        <p>{{item.title}}</p>
                     </div>
                     <p class="writer_area">
-                        <b>علی امیری</b>
+                        <b>{{item.writer.name}}</b>
                         در
-                        <b>شبکه</b>
-                    </p>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="trends_item">
-            <v-row>
-                <v-col cols="2">
-                    <div class="counter">02</div>
-                </v-col>
-                <v-col cols="10">
-                    <div class="caption">
-                        <p> آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت</p>
-                    </div>
-                    <p class="writer_area">
-                        <b>علی امیری</b>
-                        در
-                        <b>شبکه</b>
-                    </p>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="trends_item">
-            <v-row>
-                <v-col cols="2">
-                    <div class="counter">03</div>
-                </v-col>
-                <v-col cols="10">
-                    <div class="caption">
-                        <p> آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت</p>
-                    </div>
-                    <p class="writer_area">
-                        <b>علی امیری</b>
-                        در
-                        <b>شبکه</b>
-                    </p>
-                </v-col>
-            </v-row>
-        </div>
-        <div class="trends_item">
-            <v-row>
-                <v-col cols="2">
-                    <div class="counter">04</div>
-                </v-col>
-                <v-col cols="10">
-                    <div class="caption">
-                        <p> آشنایی با 6 مورد از بهترین فریم ورک های جاوا اسکریپت</p>
-                    </div>
-                    <p class="writer_area">
-                        <b>علی امیری</b>
-                        در
-                        <b>شبکه</b>
+                        <b>{{item.category.title}}</b>
                     </p>
                 </v-col>
             </v-row>
@@ -72,8 +21,27 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
-        name: "trends"
+        name: "trends",
+        data:function(){
+            return{
+                data:[]
+            }
+        },
+        mounted() {
+            this.apiHandler();
+        },
+        methods:{
+            async apiHandler(){
+                const response = await axios.get('http://simba-market.ir/theme/meranda/api/main/trends')
+                if (response.status == 200) {
+                    this.data = response.data
+                    console.log(this.data)
+                }
+            }
+        }
     }
 </script>
 

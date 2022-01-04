@@ -58,7 +58,7 @@ export function ajaxGet(url, loding) {
         return new Promise((resolve, reject) => {
             Axios.get(url, {
             }).then(resp => {
-                resolve(resp.data);
+                resolve(resp.data.toJSON());
             }).catch((err) => {
                 if (err.response) {
                     if (!url.includes('checkLogin')) {
