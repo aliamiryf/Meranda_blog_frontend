@@ -7,15 +7,37 @@
                         <ul class="listMenuCom">
                             <li @click="searchBox = !searchBox"><p class="searchNavbar">جست و جو </p></li>
                             <li>درباره ما</li>
-                            <li>طراحی وب</li>
-                            <li>گرافیک</li>
-                            <li>شبکه</li>
-                            <li>برنامه نویسی</li>
-                            <li>خانه</li>
+                            <li>
+                                <router-link to="/category/web_developer">
+                                    طراحی وب
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/category/graphic">
+                                    گرافیک
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/category/network">
+                                    شبکه
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/category/programming">
+                                    برنامه نویسی
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link to="/">
+                                    خانه
+                                </router-link>
+                            </li>
                         </ul>
                     </v-col>
                     <v-col cols="3">
-                        <h4 class="logoText">Meranda</h4>
+                        <router-link to="/" style="color: inherit;text-decoration: none">
+                            <h4 class="logoText">Meranda</h4>
+                        </router-link>
                     </v-col>
                 </v-row>
             </v-container>
@@ -49,7 +71,9 @@
                         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
                     </v-col>
                     <v-col cols="6" sm="6">
-                        <h4 class="logoText">Meranda</h4>
+                        <router-link to="/" style="color: inherit;text-decoration: none">
+                            <h4 class="logoText">Meranda</h4>
+                        </router-link>
                     </v-col>
 
                 </v-row>
@@ -76,16 +100,23 @@
 
 <script>
     export default {
-        name : "navbar",
+        name: "navbar",
         data: function () {
             return {
                 searchBox: false,
-                drawer : false
+                drawer: false
             }
         }
     }
 </script>
 
 <style scoped>
+    .logoText {
+        color: inherit !important;
+    }
 
+    a {
+        color: inherit !important;
+        text-decoration: none;
+    }
 </style>

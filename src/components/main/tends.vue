@@ -1,21 +1,23 @@
 <template>
     <div>
         <div class="trends_item" v-for="(item , i) in data" :key="i">
-            <v-row>
-                <v-col cols="2">
-                    <div class="counter" v-text="'0'+(parseInt(i)+1)"></div>
-                </v-col>
-                <v-col cols="10">
-                    <div class="caption">
-                        <p>{{item.title}}</p>
-                    </div>
-                    <p class="writer_area">
-                        <b>{{item.writer.name}}</b>
-                        در
-                        <b>{{item.category.title}}</b>
-                    </p>
-                </v-col>
-            </v-row>
+            <router-link :to="{name: 'singlepost', params:{slug:item.slug }}" >
+                <v-row>
+                    <v-col cols="2">
+                        <div class="counter" v-text="'0'+(parseInt(i)+1)"></div>
+                    </v-col>
+                    <v-col cols="10">
+                        <div class="caption">
+                            <p>{{item.title}}</p>
+                        </div>
+                        <p class="writer_area">
+                            <b>{{item.writer.name}}</b>
+                            در
+                            <b>{{item.category.title}}</b>
+                        </p>
+                    </v-col>
+                </v-row>
+            </router-link>
         </div>
     </div>
 </template>
@@ -67,5 +69,12 @@
         /*margin-top: -15px;*/
         font-family: main;
         text-align: right;
+    }
+    a{
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+    a:hover{
+        font-weight: bolder;
     }
 </style>

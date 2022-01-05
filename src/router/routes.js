@@ -1,5 +1,6 @@
 import Home from "../views/Home";
-import post from '../views/Post'
+import post from '../views/Post';
+import category from "../views/category";
 const routes = [
     {
         path: '/',
@@ -15,10 +16,16 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     },
     {
-        path: "/post/:id",
+        path: "/post/:slug",
         name: "singlepost",
         props:true,
         component: post,
-    }
+    },
+    {
+        path: "/category/:slug",
+        name: "category",
+        props:true,
+        component: category,
+    },
 ]
 export default routes;

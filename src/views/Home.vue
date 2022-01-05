@@ -20,6 +20,7 @@
                                                 :caption="suggest[0].suggestion_post.description"
                                                 :writer="suggest[0].suggestion_post.writer.name"
                                                 :category="suggest[0].suggestion_post.category.title"
+                                                :slug="suggest[0].suggestion_post.slug"
                                         />
                                     </v-col>
                                     <v-col cols="12" lg="6">
