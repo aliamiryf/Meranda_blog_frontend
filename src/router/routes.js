@@ -1,6 +1,7 @@
 import Home from "../views/Home";
 import post from '../views/Post';
 import category from "../views/category";
+import login from "../views/auth/login";
 const routes = [
     {
         path: '/',
@@ -27,5 +28,11 @@ const routes = [
         props:true,
         component: category,
     },
+    {
+        path: "/login",
+        name: "login",
+        component: login,
+    },
+
 ]
 export default routes;

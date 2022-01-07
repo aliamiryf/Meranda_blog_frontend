@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <v-dialog
                 v-model="loadering"
                 width="500"
@@ -11,6 +12,7 @@
                 ></v-progress-linear>
             </v-card>
         </v-dialog>
+
     </div>
 </template>
 
@@ -19,7 +21,8 @@
         name :"loader",
         data:function(){
             return{
-                test:true
+                test:true,
+
             }
         },
         props:{

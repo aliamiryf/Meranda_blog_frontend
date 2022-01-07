@@ -4,7 +4,6 @@
         <v-main class="mainArea">
             <loader :loadering="isload"/>
             <slider v-if="sliderData != []" :data="sliderData"/>
-            {{data}}
             <br>
             <center>
                 <div class="default_contianer">
@@ -24,6 +23,7 @@
                                         />
                                     </v-col>
                                     <v-col cols="12" lg="6">
+<!--                                        {{// suggest.}}-->
                                         <div v-for="(item , i) in suggest" :key="i">
                                             <horizontal-post
                                                     v-if="item.suggestion_post.id != suggest[0].suggestion_post.id "
@@ -32,6 +32,7 @@
                                                     :category="item.suggestion_post.category.title"
                                                     :writer="item.suggestion_post.writer.name"
                                             />
+
                                         </div>
 
                                     </v-col>
@@ -97,7 +98,7 @@
     // import {ajaxGet} from "../utils/utilities";
     export default {
         name: 'Home',
-        components: {Loader, Fotter, Trends, HorizontalPost, VerticalPost, Slider, Navbar},
+        components: {Navbar , Loader , Slider , VerticalPost , HorizontalPost , Trends , Fotter},
         data: function () {
             return {
                 model: 0,
