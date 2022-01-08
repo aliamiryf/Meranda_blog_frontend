@@ -18,7 +18,7 @@ router.beforeEach((to, from, next) => {
       return;
     }
     else {
-      next('/')
+      next('/dashbord')
       return;
     }
   }

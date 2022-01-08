@@ -2,6 +2,8 @@ import Home from "../views/Home";
 import post from '../views/Post';
 import category from "../views/category";
 import login from "../views/auth/login";
+import register from "../views/auth/register";
+
 const routes = [
     {
         path: '/',
@@ -36,6 +38,11 @@ const routes = [
             loginPage:true
         }
     },
+    {
+        path: '/register',
+        name: 'register',
+        component:register,
+    }
 
 ]
 // routes.be
