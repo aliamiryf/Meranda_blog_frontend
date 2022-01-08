@@ -43,7 +43,9 @@
 
 <script>
     import Loader from "../../components/main/loader";
-    import axios from 'axios'
+    import axios from 'axios';
+    import router from "../../router";
+
     export default {
         name: "login",
         components: {Loader},
@@ -54,22 +56,33 @@
                 errorLoad: false,
                 erroreMessage: null,
                 email: "aliamiry@gmail.com",
-                password: "123456789"
+                password: "123456789",
+                responce:"",
             }
         },
         methods: {
             async apiHandler() {
                 this.isload = true
+                if (this.email == ""&& this.password ==""){
+                    this.errorLoad = true;
+                    this.erroreMessage="فیلد های ایمیل و رمز عبور را پر کنید"
+                    this.isload = false
+                    return ;
+                }
                 const article = {
-                    'grant_type': 'password',
-                    'client_id': '3',
-                    'client_secret':'Zi9fvokvWp18C1wSv8BCze6tiuInBQiS5hddgLMw',
-                    'username':this.email,
+                    'email':this.email,
                     'password':this.password,
-                    'scope':''
                 };
-                const response = await axios.post('http://simba-market.ir/theme/meranda/oauth/token' , article)
-                console.log(response.data)
+                try {
+                     this.response = await axios.post('http://simba-market.ir/theme/meranda/api/main/login' , article)
+                    console.log("Bearer "+ this.response.data[0].access_token)
+                    this.$store.dispatch('setToken',"Bearer"+this.response.data[0].access_token)
+                    router.push('/')
+                }catch (e) {
+                    this.errorLoad = true;
+                    this.erroreMessage="نام کاربری یا رمز عبور اشتباه است"
+                    this.isload = false
+                }
             }
         }
     }

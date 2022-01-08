@@ -32,7 +32,11 @@ const routes = [
         path: "/login",
         name: "login",
         component: login,
+        meta:{
+            loginPage:true
+        }
     },
 
 ]
+// routes.be
 export default routes;
