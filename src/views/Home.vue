@@ -1,6 +1,5 @@
 <template>
     <v-app>
-        <navbar/>
         <v-main class="mainArea">
             <loader :loadering="isload"/>
             <slider v-if="sliderData != []" :data="sliderData"/>
@@ -87,7 +86,7 @@
 
 <script>
 
-    import Navbar from "../components/main/navbar";
+    // import Navbar from "../components/main/navbar";
     import Slider from "../components/index/slider";
     import VerticalPost from "../components/main/verticalPost";
     import HorizontalPost from "../components/main/horizontalPost";
@@ -96,13 +95,14 @@
     import axios from 'axios';
     import Loader from "../components/main/loader";
     // import {ajaxGet} from "../utils/utilities";
+    // import {ajaxGet} from "../utils/utilities";
     export default {
         name: 'Home',
-        components: {Navbar , Loader , Slider , VerticalPost , HorizontalPost , Trends , Fotter},
+        components: { Loader , Slider , VerticalPost , HorizontalPost , Trends , Fotter},
         data: function () {
             return {
                 model: 0,
-                isload: false,
+                isload: true,
                 date: [],
                 sliderData: [],
                 suggest: [],
@@ -125,6 +125,11 @@
                     this.web_developer = response.data.web_developer
                     // console.log(this.network[0].posts)
                 }
+                // const response = ajaxGet('http://simba-market.ir/theme/meranda/api/main/index')
+                // response.then((resp)=> {
+                //     this.web_developer = resp.web_developer;
+                //     console.log(this.web_developer)
+                // })
             }
         }
     }

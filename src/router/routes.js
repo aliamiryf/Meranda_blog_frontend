@@ -3,46 +3,58 @@ import post from '../views/Post';
 import category from "../views/category";
 import login from "../views/auth/login";
 import register from "../views/auth/register";
+import main_layout from "../views/layout/main";
+import auth_layout from '../views/layout/auth';
 
 const routes = [
+
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        name: 'main',
+        component: main_layout,
+        children: [
+            {
+                path: '/home',
+                name: 'Home',
+                component: Home
+            },
+            {
+                path: "/post/:slug",
+                name: "singlepost",
+                props: true,
+                component: post,
+            },
+            {
+                path: "/category/:slug",
+                name: "category",
+                props: true,
+                component: category,
+            },
+        ]
     },
     {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        path: "/",
+        name: "auth",
+        component: auth_layout,
+        children: [
+            {
+                path: "/login",
+                name: "login",
+                component: login,
+                meta: {
+                    loginPage: true
+                }
+            },
+            {
+                path: '/register',
+                name: 'register',
+                component: register,
+            }
+        ]
     },
-    {
-        path: "/post/:slug",
-        name: "singlepost",
-        props:true,
-        component: post,
-    },
-    {
-        path: "/category/:slug",
-        name: "category",
-        props:true,
-        component: category,
-    },
-    {
-        path: "/login",
-        name: "login",
-        component: login,
-        meta:{
-            loginPage:true
-        }
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component:register,
-    }
+
+
+
 
 ]
 // routes.be

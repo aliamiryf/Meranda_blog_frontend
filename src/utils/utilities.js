@@ -58,15 +58,13 @@ export function ajaxGet(url, loding) {
         return new Promise((resolve, reject) => {
             Axios.get(url, {
             }).then(resp => {
-                resolve(resp.data.toJSON());
+                resolve(resp.data);
             }).catch((err) => {
-                if (err.response) {
-                    if (!url.includes('checkLogin')) {
-                        EventBus.$emit('notify', 'red', undefined, err.response.data.message);
-                    }
-                } else if (err.request) {
-                    EventBus.$emit('setLoading', false)
-                    EventBus.$emit('notify', 'red', undefined, 'لطفا اینترنت خود را بررسی کنید');
+
+                 if (err.request) {
+                    // EventBus.$emit('setLoading', false)
+                    // EventBus.$emit('notify', 'red', undefined, 'لطفا اینترنت خود را بررسی کنید');
+                     console.log('errore')
                 }
                 reject(err);
             }).finally(() => {
@@ -74,8 +72,9 @@ export function ajaxGet(url, loding) {
             });
         });
     } catch (ex) {
-        EventBus.$emit('notify', 'red', undefined, 'خطایی رخ داده است');
+        // EventBus.$emit('notify', 'red', undefined, 'خطایی رخ داده است');
         // store.commit('setLoading', false);
+        console.log('errore two')
     }
 
 }

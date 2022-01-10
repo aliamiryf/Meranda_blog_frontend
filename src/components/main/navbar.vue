@@ -28,7 +28,7 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link to="/">
+                                <router-link to="/home">
                                     خانه
                                 </router-link>
                             </li>
